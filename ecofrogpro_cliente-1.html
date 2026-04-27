@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcofrogPro · Ya instalado en tu negocio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep:  #0d3320;
+  --green-mid:   #1a5c35;
+  --green-corp:  #22783f;
+  --blue-corp:   #0a4f7a;
+  --blue-light:  #1a7ab5;
+  --teal:        #0e8c6a;
+  --accent:      #4dcf8a;
+  --gold:        #c8a84b;
+  --white:       #ffffff;
+  --off-white:   #f5f7f5;
+  --stone:       #eaeee8;
+  --text:        #1a2b1f;
+  --muted:       #5a7060;
+  --line:        rgba(10,40,20,0.1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--green-deep);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(77,207,138,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(10,79,122,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* subtle hex grid overlay */
+.hero-bg-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234dcf8a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(77,207,138,0.6);
+}
+
+.brand-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+.brand-name span {
+  color: var(--accent);
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.cert-badge svg { width:12px; height:12px; color: var(--accent); }
+
+.hero-body {
+  padding: 40px 24px 52px;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.installed-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(77,207,138,0.12);
+  border: 1px solid rgba(77,207,138,0.25);
+  border-radius: 100px;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+}
+.installed-chip span {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+.installed-chip p {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 10vw, 60px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 36px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--green-deep);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(77,207,138,0.25);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(77,207,138,0.35); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
+/* ─── METRICS STRIP ─── */
+.metrics-outer {
+  background: var(--green-mid);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.metric {
+  padding: 22px 12px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+.metric:last-child { border-right: none; }
+.metric:first-child::after {
+  content: 'ACTIVO';
+  position: absolute;
+  top: 8px; right: 8px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: rgba(77,207,138,0.12);
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.metric-val {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.metric-val sub {
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  vertical-align: baseline;
+}
+
+.metric-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1.3;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.eyebrow-line {
+  width: 20px; height: 2px;
+  background: var(--green-corp);
+  border-radius: 2px;
+}
+.eyebrow-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-corp);
+}
+
+.section-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.section-h span { color: var(--green-corp); font-style: italic; }
+
+.section-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 600px;
+}
+
+/* ─── BENEFITS ─── */
+.benefits-section {
+  padding: 72px 0 60px;
+  background: var(--off-white);
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.benefit-row {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 24px 26px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.benefit-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--green-corp);
+  border-radius: 3px 0 0 3px;
+}
+.benefit-row:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.benefit-row.featured {
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--blue-corp) 100%);
+  border-color: transparent;
+}
+.benefit-row.featured::before { background: var(--accent); }
+.benefit-row.featured .b-icon-wrap { background: rgba(255,255,255,0.1); }
+.benefit-row.featured .b-icon-wrap svg { color: var(--accent); }
+.benefit-row.featured .b-val { color: var(--accent); }
+.benefit-row.featured .b-title { color: var(--white); }
+.benefit-row.featured .b-desc { color: rgba(255,255,255,0.6); }
+
+.b-icon-wrap {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(34,120,63,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.b-icon-wrap svg { width: 22px; height: 22px; color: var(--green-corp); }
+
+.b-content { flex: 1; }
+
+.b-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green-corp);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.b-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.b-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.b-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--green-corp);
+  background: rgba(34,120,63,0.08);
+  border-radius: 100px;
+  padding: 3px 8px;
+  margin-top: 8px;
+  display: inline-block;
+}
+.benefit-row.featured .b-tag {
+  color: var(--accent);
+  background: rgba(77,207,138,0.15);
+}
+
+/* ─── CERTS STRIP ─── */
+.certs-strip {
+  background: var(--green-deep);
+  padding: 40px 24px;
+}
+
+.certs-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cert-pill {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.cert-pill-icon { font-size: 18px; margin-bottom: 6px; }
+.cert-pill-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.cert-pill-text strong {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* ─── USAGE TIPS ─── */
+.tips-section {
+  background: var(--stone);
+  padding: 72px 0;
+}
+.tips-section .eyebrow-line { background: var(--blue-corp); }
+.tips-section .eyebrow-text { color: var(--blue-corp); }
+.tips-section .section-h span { color: var(--blue-corp); }
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.tip-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid var(--line);
+}
+
+.tip-num {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--green-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.tip-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+.tip-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ─── APPCC BLOCK ─── */
+.appcc-section {
+  background: linear-gradient(135deg, var(--blue-corp) 0%, var(--green-deep) 100%);
+  padding: 64px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.appcc-section::before {
+  content: 'APPCC';
+  position: absolute;
+  right: -20px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 160px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.appcc-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.appcc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(77,207,138,0.15);
+  border: 1px solid rgba(77,207,138,0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 18px;
+}
+.appcc-badge svg { width: 12px; height: 12px; color: var(--accent); }
+.appcc-badge span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.appcc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.appcc-title em { font-style: italic; color: var(--accent); }
+.appcc-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 640px;
+}
+.appcc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.appcc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.appcc-check {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(77,207,138,0.2);
+  border: 1px solid rgba(77,207,138,0.35);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.appcc-check svg { width: 10px; height: 10px; color: var(--accent); }
+.appcc-item-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.appcc-item-text strong { color: var(--white); }
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--off-white);
+  padding: 72px 0;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.contact-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.contact-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+
+.cc-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cc-icon.green { background: rgba(34,120,63,0.08); }
+.cc-icon.blue  { background: rgba(10,79,122,0.08); }
+.cc-icon svg { width: 22px; height: 22px; }
+.cc-icon.green svg { color: var(--green-corp); }
+.cc-icon.blue  svg { color: var(--blue-corp); }
+
+.cc-body { flex: 1; }
+.cc-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.cc-sub   { font-size: 13px; color: var(--muted); }
+
+.cc-arrow { color: var(--muted); }
+.cc-arrow svg { width: 18px; height: 18px; }
+
+/* ─── REVIEW ─── */
+.review-section {
+  background: var(--white);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.review-wrap {
+  background: var(--green-deep);
+  border-radius: 28px;
+  padding: 56px 48px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.review-wrap::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(10,79,122,0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+.review-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 240px; height: 240px;
+  background: radial-gradient(circle, rgba(77,207,138,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.review-inner { position: relative; z-index: 1; }
+
+.stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+.star { font-size: 26px; color: var(--gold); }
+
+.review-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+}
+
+.review-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.review-title em { font-style: italic; color: var(--accent); }
+
+.review-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  max-width: 420px;
+  margin: 0 auto 36px;
+}
+
+.divider {
+  width: 48px; height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 auto 32px;
+}
+
+.btn-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--green-deep);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  margin-bottom: 20px;
+}
+.btn-google:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+
+.review-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.3px;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--green-deep);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.footer-address {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.8;
+}
+.footer-address a {
+  color: rgba(77,207,138,0.45);
+  text-decoration: none;
+}
+.footer-address a:hover { color: var(--accent); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-body > * {
+  animation: fadeUp 0.7s ease both;
+}
+.installed-chip { animation-delay: 0s; }
+.hero-title     { animation-delay: 0.1s; }
+.hero-desc      { animation-delay: 0.2s; }
+.hero-ctas      { animation-delay: 0.3s; }
+
+/* ═══════════════════════════════════════
+   TABLET  ≥ 768px
+═══════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  .hero-body {
+    padding: 60px 40px 72px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .hero-top-bar {
+    padding: 20px 40px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .hero-title { font-size: clamp(52px, 7vw, 80px); }
+  .hero-desc  { font-size: 17px; max-width: 520px; }
+
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .metric { padding: 28px 20px; }
+  .metric-val { font-size: 34px; }
+  .metric-lbl { font-size: 11px; }
+
+  .benefits-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .benefit-row.featured {
+    grid-column: 1 / -1;
+  }
+
+  .certs-grid { grid-template-columns: repeat(6, 1fr); }
+
+  .tips-grid { grid-template-columns: 1fr 1fr; }
+
+  .appcc-items { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+  .appcc-item  { flex: 1 1 calc(50% - 8px); }
+
+  .contact-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP  ≥ 1100px
+═══════════════════════════════════════ */
+@media (min-width: 1100px) {
+
+  .hero { display: grid; grid-template-rows: auto 1fr; }
+
+  .hero-top-bar {
+    max-width: 100%;
+    padding: 22px 60px;
+  }
+
+  .hero-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 60px 100px;
+  }
+
+  /* right column decorative block */
+  .hero-body::after {
+    content: '';
+    display: block;
+    background: radial-gradient(circle at 40% 50%, rgba(77,207,138,0.12) 0%, transparent 65%),
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234dcf8a' fill-opacity='0.06'%3E%3Cpath d='M50 50c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm-30 0c0-5.5-4.5-10-10-10S0 44.5 0 50s4.5 10 10 10 10-4.5 10-10zm0-30c0-5.5-4.5-10-10-10S0 14.5 0 20s4.5 10 10 10 10-4.5 10-10zm30 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+    min-height: 360px;
+  }
+
+  .hero-title { font-size: clamp(56px, 5vw, 76px); }
+
+  .metrics-outer { }
+  .metrics {
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 60px;
+  }
+  .metric { max-width: none; padding: 32px 40px; }
+
+  .wrap { padding: 0 60px; }
+
+  .benefits-section { padding: 96px 0 80px; }
+  .benefits-list { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .benefit-row.featured { grid-column: 1 / -1; }
+
+  .tips-section { padding: 96px 0; }
+  .tips-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-section { padding: 96px 0; }
+
+  .review-section { padding: 100px 24px; }
+  .review-wrap { padding: 72px 80px; }
+
+  .certs-strip { padding: 48px 60px; }
+  .certs-grid { grid-template-columns: repeat(6, 1fr); gap: 12px; }
+}
+
+/* ─── MOBILE fallback < 480px ─── */
+@media (max-width: 479px) {
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+  .review-wrap { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+
+  <div class="hero-top-bar">
+    <div class="brand-lockup">
+      <img src="data:image/png;base64,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" alt="EcofrogPro" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+    </div>
+    <div class="cert-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Certificado ENAC
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="installed-chip">
+      <span></span>
+      <p>Sistema activo y funcionando</p>
+    </div>
+
+    <h1 class="hero-title">
+      Tu negocio ya<br>
+      limpia <em>diferente.</em>
+    </h1>
+
+    <p class="hero-desc">
+      A partir de hoy dispones de la tecnología de ozono certificada más avanzada del sector HORECA. Activa, eficiente y sin coste mensual.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="https://g.page/r/Cctt-cgfXXb9EBM/review" target="_blank" class="btn-primary">
+        <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Dejar mi reseña
+      </a>
+      <a href="#beneficios" class="btn-secondary">
+        Ver mis beneficios ↓
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── METRICS ── -->
+<div class="metrics-outer">
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-val">99<sub>%</sub></div>
+    <div class="metric-lbl">Bacterias<br>eliminadas</div>
+  </div>
+  <div class="metric">
+    <div class="metric-val">95<sub>%</sub></div>
+    <div class="metric-lbl">Ahorro en<br>químicos</div>
+  </div>
+  <div class="metric">
+    <div class="metric-val">5<sub>años</sub></div>
+    <div class="metric-lbl">Garantía<br>incluida</div>
+  </div>
+</div>
+</div>
+
+<!-- ── BENEFITS ── -->
+<section class="benefits-section" id="beneficios">
+  <div class="wrap">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Desde el día 1</span>
+    </div>
+    <h2 class="section-h">Lo que ya tienes<br><span>activo</span> en tu negocio</h2>
+    <p class="section-sub">Tu EcofrogPro está produciendo ozono ahora mismo. Esto es lo que ganas cada día.</p>
+
+    <div class="benefits-list">
+
+      <div class="benefit-row featured">
+        <div class="b-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="b-content">
+          <div class="b-val">99,9%</div>
+          <div class="b-title">Desinfección bactericida, fungicida y virucida certificada</div>
+          <div class="b-desc">Frente a Salmonella, E. coli, Listeria, Coronavirus, Norovirus y más. Certificado por laboratorios con acreditación ENAC conforme a normas UNE 13697:2015 y UNE 14476:2014+A1.</div>
+          <span class="b-tag">✓ CERTIFICADO ENAC · UNE 13697 · UNE 14476</span>
+        </div>
+      </div>
+
+      <div class="benefit-row">
+        <div class="b-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="b-content">
+          <div class="b-val">−95%</div>
+          <div class="b-title">Drástica reducción de productos químicos</div>
+          <div class="b-desc">Tu establecimiento elimina hasta el 95% del uso de detergentes y desinfectantes convencionales. Menos gasto, menos almacenaje, menos riesgo para tu equipo.</div>
+          <span class="b-tag">✓ Ahorro inmediato · Sin pedidos recurrentes</span>
+        </div>
+      </div>
+
+      <div class="benefit-row">
+        <div class="b-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="b-content">
+          <div class="b-val">APPCC</div>
+          <div class="b-title">Compatible con tu plan de autocontrol</div>
+          <div class="b-desc">EcofrogPro está validado por SAIA para el sector HORECA. Se integra directamente en tu plan de limpieza y desinfección según el Real Decreto 3484/2000, sin complicar tu documentación.</div>
+          <span class="b-tag">✓ Apto sector HORECA · Validado por SAIA</span>
+        </div>
+      </div>
+
+      <div class="benefit-row">
+        <div class="b-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <div class="b-content">
+          <div class="b-val">+O₂</div>
+          <div class="b-title">Solo deja oxígeno. Impacto cero en el medioambiente</div>
+          <div class="b-desc">El ozono se descompone en oxígeno puro tras actuar. Sin residuos, sin vertidos, sin plásticos. Tu negocio ahora colabora activamente con el medioambiente.</div>
+          <span class="b-tag">✓ Programa "Yo colaboro con el medioambiente"</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTS STRIP ── -->
+<div class="certs-strip">
+  <div class="certs-label">Acreditaciones que avalan tu sistema</div>
+  <div class="certs-grid">
+    <div class="cert-pill">
+      <div class="cert-pill-icon">🛡️</div>
+      <div class="cert-pill-text"><strong>UNE 13697:2015</strong>Bactericida y Fungicida</div>
+    </div>
+    <div class="cert-pill">
+      <div class="cert-pill-icon">🧬</div>
+      <div class="cert-pill-text"><strong>UNE 14476:2014+A1</strong>Virucida certificado</div>
+    </div>
+    <div class="cert-pill">
+      <div class="cert-pill-icon">✅</div>
+      <div class="cert-pill-text"><strong>ECHA / EUOTA</strong>Biocida aprobado UE 2023</div>
+    </div>
+    <div class="cert-pill">
+      <div class="cert-pill-icon">🏢</div>
+      <div class="cert-pill-text"><strong>ITEL</strong>Empresa acreditada</div>
+    </div>
+    <div class="cert-pill">
+      <div class="cert-pill-icon">🔬</div>
+      <div class="cert-pill-text"><strong>ENAC</strong>Ensayos acreditados</div>
+    </div>
+    <div class="cert-pill">
+      <div class="cert-pill-icon">📋</div>
+      <div class="cert-pill-text"><strong>Ministerio Sanidad</strong>Notificado 2020</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── USAGE TIPS ── -->
+<section class="tips-section">
+  <div class="wrap">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Manual de uso rápido</span>
+    </div>
+    <h2 class="section-h">Cómo usar tu<br><span>EcofrogPro</span> cada día</h2>
+    <p class="section-sub">Para garantizar la eficacia, sigue estas instrucciones del departamento técnico.</p>
+
+    <div class="tips-grid">
+
+      <div class="tip-card">
+        <div class="tip-num">1</div>
+        <div class="tip-body">
+          <div class="tip-title">Pulveriza o sumerge directamente</div>
+          <div class="tip-desc">Rellena el pulverizador con agua ozonizada del sistema. Aplica sobre la superficie o sumerge el utensilio. No requiere dilución previa.</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-num">2</div>
+        <div class="tip-body">
+          <div class="tip-title">Deja actuar entre 1 y 5 minutos</div>
+          <div class="tip-desc">En superficies con restos orgánicos, espera el tiempo completo. En superficies aparentemente limpias, 1 minuto es suficiente.</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-num">3</div>
+        <div class="tip-body">
+          <div class="tip-title">No aclares — solo oxígeno residual</div>
+          <div class="tip-desc">El ozono se convierte en O₂ de forma natural. No deja residuos. No es necesario aclarar con agua corriente en ninguna de las superficies tratadas.</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-num">4</div>
+        <div class="tip-body">
+          <div class="tip-title">Temperatura máxima del agua: 35 ºC</div>
+          <div class="tip-desc">Para preservar la concentración de ozono y su eficacia, trabaja siempre con agua fría o a temperatura ambiente. Nunca superes los 35 ºC.</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-num">5</div>
+        <div class="tip-body">
+          <div class="tip-title">Úsalo en todas las zonas de tu negocio</div>
+          <div class="tip-desc">Suelos, paredes, encimeras, utensilios, cristales, baños, zonas de manipulación de alimentos, lavavajillas y superficies en contacto con alimentos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── APPCC ── -->
+<div class="appcc-section">
+  <div class="appcc-inner">
+    <div class="appcc-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>Sistema APPCC</span>
+    </div>
+    <h3 class="appcc-title">Tu establecimiento ya<br><em>cumple la normativa</em></h3>
+    <p class="appcc-desc">Al integrar EcofrogPro en tu plan de limpieza verificado, tu negocio cumple con los requisitos del Reglamento CE 852/2004 y el Real Decreto 3484/2000. Recuerda que:</p>
+    <div class="appcc-items">
+      <div class="appcc-item">
+        <div class="appcc-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="appcc-item-text"><strong>Tu establecimiento debe verificar el plan de limpieza</strong> con analíticas propias de superficies, tal como exige el art. 10.g del RD 3484/2000.</span>
+      </div>
+      <div class="appcc-item">
+        <div class="appcc-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="appcc-item-text">EcofrogPro debe <strong>usarse según la frecuencia que defina tu plan de limpieza</strong> para garantizar su eficacia máxima.</span>
+      </div>
+      <div class="appcc-item">
+        <div class="appcc-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="appcc-item-text">El equipo debe pasar <strong>revisión técnica anual</strong> con medición del potencial REDOX para mantener la garantía.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section">
+  <div class="wrap">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Estamos contigo</span>
+    </div>
+    <h2 class="section-h">¿Necesitas<br><span>ayuda</span>?</h2>
+    <p class="section-sub">Nuestro equipo técnico está disponible para cualquier duda sobre el uso, mantenimiento o funcionamiento de tu equipo.</p>
+
+    <div class="contact-cards">
+
+      <a href="tel:900717171" class="contact-card">
+        <div class="cc-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Servicio Técnico SAT</div>
+          <div class="cc-sub">900 71 71 71 · Atención de lunes a viernes</div>
+        </div>
+        <div class="cc-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+      <a href="mailto:atencionalcliente@ecofrogpro.es" class="contact-card">
+        <div class="cc-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Correo de atención al cliente</div>
+          <div class="cc-sub">atencionalcliente@ecofrogpro.es</div>
+        </div>
+        <div class="cc-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.ecofrogpro.es" target="_blank" class="contact-card">
+        <div class="cc-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Web oficial</div>
+          <div class="cc-sub">ecofrogpro.es · Normativas, guías y novedades</div>
+        </div>
+        <div class="cc-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEW ── -->
+<section class="review-section" id="resena">
+  <div class="review-wrap">
+    <div class="review-inner">
+      <div class="stars-row">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+
+      <div class="review-eyebrow">¿Ya lo estás notando?</div>
+
+      <h2 class="review-title">
+        Cuéntanos tu<br><em>experiencia</em>
+      </h2>
+
+      <p class="review-desc">
+        Tu opinión ayuda a otros negocios del sector HORECA a tomar la mejor decisión. Solo toma un momento y para nosotros significa muchísimo.
+      </p>
+
+      <div class="divider"></div>
+
+      <a href="https://g.page/r/Cctt-cgfXXb9EBM/review" target="_blank" class="btn-google">
+        <svg style="width:20px;height:20px;flex-shrink:0;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Dejar mi reseña en Google
+      </a>
+
+      <p class="review-note">Se abrirá Google en tu navegador · Solo 1 minuto</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <div class="footer-brand">
+    <img src="data:image/png;base64,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" alt="EcofrogPro" style="height:28px;width:auto;filter:brightness(0) invert(1);opacity:0.6;">
+  </div>
+  <div class="footer-address">
+    Avda. Ortega y Gasset, 124 · Planta 2, Oficina 16 · 29006 Málaga<br>
+    <a href="https://www.ecofrogpro.es">ecofrogpro.es</a> &nbsp;·&nbsp; <a href="tel:900717171">900 71 71 71</a>
+  </div>
+</div>
+
+</body>
+</html>
